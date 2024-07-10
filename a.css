@@ -9,9 +9,7 @@
     --warning-color: #ff9800;
     --error-color: #f44336;
 }
-.zoom-container {
-    transform: scale(0.75);
-    transform-origin: top left;}
+
 * {
     margin: 0;
     padding: 0;
