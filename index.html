@@ -32,6 +32,18 @@
                 <a href="https://c2c-login.vercel.app" class="cssbuttons-io-button">
                     Get Started
                     <div class="icon">
+                        <script>
+                            document.getElementById('loadButton').addEventListener('click', function() {
+                                var loader = document.getElementById('loader');
+                                loader.style.display = 'block';
+
+                                // Simulate a delay (e.g., an AJAX call)
+                                setTimeout(function() {
+                                    loader.style.display = 'none';
+                                }, 3000); // Hide loader after 3 seconds
+                                });
+                        </script>
+
                         
                         <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path d="M0 0h24v24H0z" fill="none"></path>
@@ -39,6 +51,35 @@
                         </svg>
                     </div>
                 </a>
+                <div id="loader" class="loader">
+                    <div class="box box0">
+                      <div></div>
+                    </div>
+                    <div class="box box1">
+                      <div></div>
+                    </div>
+                    <div class="box box2">
+                      <div></div>
+                    </div>
+                    <div class="box box3">
+                      <div></div>
+                    </div>
+                    <div class="box box4">
+                      <div></div>
+                    </div>
+                    <div class="box box5">
+                      <div></div>
+                    </div>
+                    <div class="box box6">
+                      <div></div>
+                    </div>
+                    <div class="box box7">
+                      <div></div>
+                    </div>
+                    <div class="ground">
+                      <div></div>
+                    </div>
+                  </div>
                 <div style="margin-left: -30%;"></div>
             </div>
         </div>
