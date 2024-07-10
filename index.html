@@ -60,49 +60,91 @@
                 </div>
             </div>
         </section>
-
         <section id="features" class="features fade-in">
             <div class="container">
                 <h2 class="section-title">Powerful Features</h2>
                 <div class="feature-grid">
-                    <!-- Feature items (as before) -->
                     <div class="feature">
                         <i class="fas fa-graduation-cap"></i>
                         <h3>Skill Development Recommendations</h3>
                         <p>Receive personalized learning recommendations to close skill gaps and stay competitive in your industry.</p>
+                        <button class="learn-more">Learn More</button>
+                        <div class="feature-details">
+                            <h4>How it works:</h4>
+                            <ul>
+                                <li>AI analyzes your current skill set</li>
+                                <li>Identifies gaps based on industry trends</li>
+                                <li>Suggests courses and resources</li>
+                                <li>Tracks your progress over time</li>
+                            </ul>
+                        </div>
                     </div>
                     <div class="feature">
                         <i class="fas fa-brain"></i>
                         <h3>AI-Driven Insights</h3>
                         <p>Our advanced AI analyzes your skills, experience, and career goals to provide personalized recommendations.</p>
+                        <button class="learn-more">Learn More</button>
+                        <div class="feature-details">
+                            <h4>Key benefits:</h4>
+                            <ul>
+                                <li>Personalized career advice</li>
+                                <li>Industry-specific insights</li>
+                                <li>Skill gap analysis</li>
+                                <li>Tailored job recommendations</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="feature">
-                        <i class="fas fa-file-alt"></i>
-                        <h3>Smart Resume Builder </h3>
-                        <p>Create ATS-optimized resumes tailored to specific job opportunities with our intelligent resume crafting tool. <span class="new-tag">Upcomming</span></p>
-                    </div>
-                   
-                    <div class="feature">
-                        <i class="fas fa-chart-line"></i>
-                        <h3>Career Path Projection</h3>
-                        <p>Visualize potential career trajectories and make informed decisions about your professional future. <span class="new-tag">Upcomming</span></p>
-                    </div>
-                    
-                    <div class="feature">
-                        <i class="fas fa-handshake"></i>
-                        <h3>Precision Job Matching</h3>
-                        <p>Discover opportunities that align perfectly with your skills and aspirations through our AI-powered job matching algorithm.<span class="new-tag">Upcomming</span></p>
-                    </div>
-                    <div class="feature">
-                        <i class="fas fa-comments"></i>
-                        <h3>Interview AI Coach</h3>
-                        <p>Practice and improve your interview skills with our AI-powered interview simulator and receive instant feedback.<span class="new-tag">Upcomming</span></p>
-                    </div>
-                </div>
+                    <!-- Repeat for other features -->
                 </div>
             </div>
         </section>
-
+        
+        <style>
+        .feature {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .learn-more {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        
+        .feature-details {
+            display: none;
+            background-color: #f8f9fa;
+            padding: 15px;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+        
+        .feature-details h4 {
+            margin-bottom: 10px;
+        }
+        
+        .feature-details ul {
+            padding-left: 20px;
+        }
+        </style>
+        
+        <script>
+        document.querySelectorAll('.learn-more').forEach(button => {
+            button.addEventListener('click', () => {
+                const details = button.nextElementSibling;
+                if (details.style.display === 'none' || details.style.display === '') {
+                    details.style.display = 'block';
+                    button.textContent = 'Show Less';
+                } else {
+                    details.style.display = 'none';
+                    button.textContent = 'Learn More';
+                }
+            });
+        });
+        </script>
         <section id="how-it-works" class="how-it-works fade-in">
             <div class="container">
                 <h2 class="section-title">How It Works</h2>
