@@ -9,6 +9,13 @@
     --warning-color: #ff9800;
     --error-color: #f44336;
 }
+.zoom-container {
+    transform: scale(0.75);
+    transform-origin: top left;
+    width: 133.33%; /* 1 / 0.75 = 133.33% */
+    height: 133.33%; /* 1 / 0.75 = 133.33% */
+    overflow: hidden;
+}
 
 * {
     margin: 0;
