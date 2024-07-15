@@ -235,32 +235,115 @@
         <section id="how-it-works" class="how-it-works fade-in">
             <div class="container">
                 <h2 class="section-title">How Our AI Resume Analyzer Works</h2>
-                <div class="steps">
+                <div class="steps-container">
                     <div class="step">
                         <div class="step-number">1</div>
                         <h3>Upload Your Resume</h3>
-                        <p>Simply upload your current resume in PDF.</p>
+                        <p>Simply upload your current resume in PDF format. Our secure system ensures your data remains confidential.</p>
+                        <i class="fas fa-file-upload step-icon"></i>
                     </div>
                     <div class="step">
                         <div class="step-number">2</div>
                         <h3>AI-Powered Analysis</h3>
-                        <p>Our advanced AI scans your resume, checking for ATS compatibility and areas for improvement.</p>
+                        <p>Our advanced AI scans your resume, checking for ATS compatibility, keyword optimization, and areas for improvement using industry-specific algorithms.</p>
+                        <i class="fas fa-robot step-icon"></i>
                     </div>
                     <div class="step">
                         <div class="step-number">3</div>
                         <h3>Get Detailed Insights</h3>
-                        <p>Receive a comprehensive report with scores, suggestions, and optimization tips.</p>
+                        <p>Receive a comprehensive report with scores, tailored suggestions, and optimization tips based on current job market trends and employer preferences.</p>
+                        <i class="fas fa-chart-bar step-icon"></i>
                     </div>
                     <div class="step">
                         <div class="step-number">4</div>
                         <h3>Improve and Apply</h3>
-                        <p>Use our suggestions to enhance your resume and apply to matched job opportunities with confidence.</p>
+                        <p>Use our AI-driven suggestions to enhance your resume and apply to matched job opportunities with confidence, increasing your chances of landing interviews.</p>
+                        <i class="fas fa-check-circle step-icon"></i>
                     </div>
                 </div>
-
-                <a style="margin-top: 40px;" href="https://c2c-login.vercel.app/" class="cta-button">Start Your Free Analysis</a>
+                <div class="cta-container">
+                    <h4>Ready to supercharge your job search?</h4>
+                    <a href="https://c2c-login.vercel.app/" class="cta-button">Start Your Free Analysis</a>
+                </div>
             </div>
         </section>
+        
+        <style>
+            .how-it-works {
+                background-color: #f8f9fa;
+                padding: 80px 0;
+            }
+            .steps-container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                margin-top: 50px;
+            }
+            .step {
+                flex-basis: calc(25% - 20px);
+                background-color: #ffffff;
+                border-radius: 10px;
+                padding: 30px;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+                transition: all 0.3s ease;
+                text-align: center;
+            }
+            .step:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+            }
+            .step-number {
+                font-size: 24px;
+                font-weight: bold;
+                color: #4cc9f0;
+                margin-bottom: 15px;
+            }
+            .step h3 {
+                font-size: 20px;
+                margin-bottom: 15px;
+                color: #333;
+            }
+            .step p {
+                font-size: 16px;
+                color: #666;
+                line-height: 1.6;
+            }
+            .step-icon {
+                font-size: 48px;
+                color: #4cc9f0;
+                margin-top: 20px;
+            }
+            .cta-container {
+                text-align: center;
+                margin-top: 50px;
+            }
+            .cta-container h4 {
+                font-size: 24px;
+                margin-bottom: 20px;
+                color: #333;
+            }
+            .cta-button {
+                display: inline-block;
+                padding: 15px 30px;
+                font-size: 18px;
+                font-weight: bold;
+                color: #ffffff;
+                background-color: #4cc9f0;
+                border-radius: 30px;
+                text-decoration: none;
+                transition: all 0.3s ease;
+            }
+            .cta-button:hover {
+                background-color: #3ba3d0;
+                transform: scale(1.05);
+            }
+            @media (max-width: 768px) {
+                .step {
+                    flex-basis: 100%;
+                    margin-bottom: 30px;
+                }
+            }
+        </style>
 
         <!-- <section id="testimonials" class="testimonials fade-in">
             <div class="container">
