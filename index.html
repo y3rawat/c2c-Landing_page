@@ -238,118 +238,7 @@
                 </div>
             </div>
         </section>
-        <style>
-            * {
-                box-sizing: border-box;
-                margin: 0;
-                padding: 0;
-            }
-            body {
-                font-family: Arial, sans-serif;
-                line-height: 1.6;
-                color: #333;
-            }
-            .container {
-                width: 100%;
-                max-width: 1200px;
-                margin: 0 auto;
-                padding: 0 20px;
-            }
-            header {
-                background-color: #0099ff;
-                color: #fff;
-                padding: 1rem 0;
-            }
-            .logo {
-                font-size: 1.5rem;
-                font-weight: bold;
-            }
-            nav {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-            }
-            .menu-toggle {
-                display: none;
-                font-size: 1.5rem;
-                cursor: pointer;
-            }
-            .nav-links {
-                display: flex;
-                list-style: none;
-            }
-            .nav-links li {
-                margin-left: 1rem;
-            }
-            .nav-links a {
-                color: #fff;
-                text-decoration: none;
-            }
-            .section-title {
-                font-size: 2rem;
-                text-align: center;
-                margin-bottom: 2rem;
-            }
-            .steps-container {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: space-around;
-            }
-            .step {
-                flex-basis: calc(25% - 20px);
-                background-color: #f4f4f4;
-                border-radius: 10px;
-                padding: 20px;
-                margin-bottom: 20px;
-                text-align: center;
-            }
-            .step-number {
-                font-size: 2rem;
-                font-weight: bold;
-                color: #0099ff;
-                margin-bottom: 10px;
-            }
-            .step h3 {
-                font-size: 1.2rem;
-                margin-bottom: 10px;
-            }
-            .step-icon {
-                font-size: 3rem;
-                color: #0099ff;
-                margin: 1rem 0;
-            }
-            @media (max-width: 768px) {
-                .menu-toggle {
-                    display: block;
-                }
-                .nav-links {
-                    display: none;
-                    flex-direction: column;
-                    width: 100%;
-                    position: absolute;
-                    top: 60px;
-                    left: 0;
-                    background-color: #0099ff;
-                    padding: 1rem;
-                }
-                .nav-links.active {
-                    display: flex;
-                }
-                .nav-links li {
-                    margin: 0.5rem 0;
-                }
-                .step {
-                    flex-basis: 100%;
-                }
-                .section-title {
-                    font-size: 1.5rem;
-                }
-                .step h3 {
-                    font-size: 1rem;
-                }
-            }
-        </style>
-        <section id="how-it-works">
+        <section id="how-it-works" class="how-it-works fade-in">
             <div class="container">
                 <h2 class="section-title">How Our AI Resume Analyzer Works</h2>
                 <div class="steps-container">
@@ -362,33 +251,28 @@
                     <div class="step">
                         <div class="step-number">2</div>
                         <h3>AI-Powered Analysis</h3>
-                        <p>Our advanced AI scans your resume, checking for ATS compatibility, keyword optimization, and areas for improvement.</p>
+                        <p>Our advanced AI scans your resume, checking for ATS compatibility, keyword optimization, and areas for improvement using industry-specific algorithms.</p>
                         <i class="fas fa-robot step-icon"></i>
                     </div>
                     <div class="step">
                         <div class="step-number">3</div>
                         <h3>Get Detailed Insights</h3>
-                        <p>Receive a comprehensive report with scores, tailored suggestions, and optimization tips.</p>
+                        <p>Receive a comprehensive report with scores, tailored suggestions, and optimization tips based on current job market trends and employer preferences.</p>
                         <i class="fas fa-chart-bar step-icon"></i>
                     </div>
                     <div class="step">
                         <div class="step-number">4</div>
                         <h3>Improve and Apply</h3>
-                        <p>Use our AI-driven suggestions to enhance your resume and apply to matched job opportunities with confidence.</p>
+                        <p>Use our AI-driven suggestions to enhance your resume and apply to matched job opportunities with confidence, increasing your chances of landing interviews.</p>
                         <i class="fas fa-check-circle step-icon"></i>
                     </div>
                 </div>
+                <div class="cta-container">
+                    <h4>Ready to supercharge your job search?</h4>
+                    <a href="https://c2c-login.vercel.app/" class="cta-button">Start Your Free Analysis</a>
+                </div>
             </div>
         </section>
-
-    <script>
-        const mobileMenu = document.getElementById('mobile-menu');
-        const navLinks = document.querySelector('.nav-links');
-
-        mobileMenu.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-    </script>
         
         <style>
             .how-it-works {
