@@ -304,11 +304,6 @@ h1 {
     color: var(--primary-color);
 }
 
-.how-it-works {
-    background-color: var(--light-bg);
-    padding: 6.25rem 0;
-}
-
 .steps {
     display: flex;
     justify-content: space-between;
