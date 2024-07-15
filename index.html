@@ -656,19 +656,18 @@
     </footer>
 
     <script src="script.js"></script>
-    <script>
-        // Function to show the loader
+    <script>// Function to show the loader
         function showLoader() {
             document.getElementById('loader').style.display = 'flex';
             document.body.style.overflow = 'hidden'; // Prevent scrolling when loader is visible
         }
-
+        
         // Function to hide the loader
         function hideLoader() {
             document.getElementById('loader').style.display = 'none';
             document.body.style.overflow = ''; // Restore scrolling
         }
-
+        
         // Add event listeners to all links and buttons that navigate away from the page
         document.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', function(e) {
@@ -679,12 +678,25 @@
                 showLoader();
             });
         });
-
+        
         // Hide loader when the page is fully loaded
         window.addEventListener('load', hideLoader);
-
+        
         // Show loader when the page is about to unload
         window.addEventListener('beforeunload', showLoader);
+        
+        // Handle page show event (fires when navigating back to the page)
+        window.addEventListener('pageshow', function(event) {
+            if (event.persisted) {
+                // Page was loaded from cache (user navigated back)
+                hideLoader();
+            }
+        });
+        
+        // Use the History API to handle navigation
+        window.addEventListener('popstate', function(event) {
+            hideLoader();
+        });
     </script>
 </body>
 </html>
