@@ -238,6 +238,117 @@
                 </div>
             </div>
         </section>
+        <style>
+            * {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+            body {
+                font-family: Arial, sans-serif;
+                line-height: 1.6;
+                color: #333;
+            }
+            .container {
+                width: 100%;
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 20px;
+            }
+            header {
+                background-color: #0099ff;
+                color: #fff;
+                padding: 1rem 0;
+            }
+            .logo {
+                font-size: 1.5rem;
+                font-weight: bold;
+            }
+            nav {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .menu-toggle {
+                display: none;
+                font-size: 1.5rem;
+                cursor: pointer;
+            }
+            .nav-links {
+                display: flex;
+                list-style: none;
+            }
+            .nav-links li {
+                margin-left: 1rem;
+            }
+            .nav-links a {
+                color: #fff;
+                text-decoration: none;
+            }
+            .section-title {
+                font-size: 2rem;
+                text-align: center;
+                margin-bottom: 2rem;
+            }
+            .steps-container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+            }
+            .step {
+                flex-basis: calc(25% - 20px);
+                background-color: #f4f4f4;
+                border-radius: 10px;
+                padding: 20px;
+                margin-bottom: 20px;
+                text-align: center;
+            }
+            .step-number {
+                font-size: 2rem;
+                font-weight: bold;
+                color: #0099ff;
+                margin-bottom: 10px;
+            }
+            .step h3 {
+                font-size: 1.2rem;
+                margin-bottom: 10px;
+            }
+            .step-icon {
+                font-size: 3rem;
+                color: #0099ff;
+                margin: 1rem 0;
+            }
+            @media (max-width: 768px) {
+                .menu-toggle {
+                    display: block;
+                }
+                .nav-links {
+                    display: none;
+                    flex-direction: column;
+                    width: 100%;
+                    position: absolute;
+                    top: 60px;
+                    left: 0;
+                    background-color: #0099ff;
+                    padding: 1rem;
+                }
+                .nav-links.active {
+                    display: flex;
+                }
+                .nav-links li {
+                    margin: 0.5rem 0;
+                }
+                .step {
+                    flex-basis: 100%;
+                }
+                .section-title {
+                    font-size: 1.5rem;
+                }
+                .step h3 {
+                    font-size: 1rem;
+                }
+            }
+        </style>
         <section id="how-it-works">
             <div class="container">
                 <h2 class="section-title">How Our AI Resume Analyzer Works</h2>
