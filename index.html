@@ -275,82 +275,123 @@
         </section>
         
         <style>
+        .how-it-works {
+            background-color: #f8f9fa;
+            padding: 60px 0;
+        }
+        
+        .steps-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 40px;
+        }
+        
+        .step {
+            flex-basis: calc(50% - 20px);
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+        
+        .step-number {
+            font-size: 22px;
+            font-weight: bold;
+            color: #4cc9f0;
+            margin-bottom: 12px;
+        }
+        
+        .step h3 {
+            font-size: 18px;
+            margin-bottom: 12px;
+            color: #333;
+        }
+        
+        .step p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.5;
+        }
+        
+        .step-icon {
+            font-size: 40px;
+            color: #4cc9f0;
+            margin-top: 15px;
+        }
+        
+        .cta-container {
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .cta-container h4 {
+            font-size: 22px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 12px 25px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #ffffff;
+            background-color: #4cc9f0;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            background-color: #3ba3d0;
+            transform: scale(1.05);
+        }
+        
+        @media (max-width: 768px) {
             .how-it-works {
-                background-color: #f8f9fa;
-                padding: 80px 0;
+                padding: 40px 0;
             }
+        
             .steps-container {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: space-between;
-                margin-top: 50px;
+                flex-direction: column;
             }
+        
             .step {
-                flex-basis: calc(25% - 20px);
-                background-color: #ffffff;
-                border-radius: 10px;
-                padding: 30px;
-                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-                transition: all 0.3s ease;
-                text-align: center;
-            }
-            .step:hover {
-                transform: translateY(-10px);
-                box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-            }
-            .step-number {
-                font-size: 24px;
-                font-weight: bold;
-                color: #4cc9f0;
-                margin-bottom: 15px;
-            }
-            .step h3 {
-                font-size: 20px;
-                margin-bottom: 15px;
-                color: #333;
-            }
-            .step p {
-                font-size: 16px;
-                color: #666;
-                line-height: 1.6;
-            }
-            .step-icon {
-                font-size: 48px;
-                color: #4cc9f0;
-                margin-top: 20px;
-            }
-            .cta-container {
-                text-align: center;
-                margin-top: 50px;
-            }
-            .cta-container h4 {
-                font-size: 24px;
+                flex-basis: 100%;
                 margin-bottom: 20px;
-                color: #333;
             }
-            .cta-button {
-                display: inline-block;
-                padding: 15px 30px;
+        
+            .step h3 {
+                font-size: 16px;
+            }
+        
+            .step p {
+                font-size: 13px;
+            }
+        
+            .step-icon {
+                font-size: 32px;
+            }
+        
+            .cta-container h4 {
                 font-size: 18px;
-                font-weight: bold;
-                color: #ffffff;
-                background-color: #4cc9f0;
-                border-radius: 30px;
-                text-decoration: none;
-                transition: all 0.3s ease;
             }
-            .cta-button:hover {
-                background-color: #3ba3d0;
-                transform: scale(1.05);
+        
+            .cta-button {
+                padding: 10px 20px;
+                font-size: 14px;
             }
-            @media (max-width: 768px) {
-                .step {
-                    flex-basis: 100%;
-                    margin-bottom: 30px;
-                }
-            }
+        }
         </style>
-
         <!-- <section id="testimonials" class="testimonials fade-in">
             <div class="container">
                 <h2 class="section-title">Success Stories</h2>
