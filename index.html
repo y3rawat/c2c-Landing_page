@@ -470,8 +470,21 @@
                         <li>Integration with HR systems</li>
                         <li>Dedicated account manager</li>
                     </ul>
-                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=c2c.y3rawat@gmail.com&su=Related%20to%20Enterprise%20Plan&body=Hi,%0D%0A%0D%0AI%20am%20interested%20in%20the%20Enterprise%20Plan.%20Please%20connect%20with%20me.%20Here%20are%20my%20details:%0D%0A%0D%0AName:%20[Your%20Name]%0D%0AMobile%20Number:%20[Your%20Mobile%20Number]%0D%0AEmail:%20[Your%20Email]%0D%0AAvailable%20Timings:%20[Your%20Available%20Timings]%0D%0A%0D%0AThank%20you." target="_blank" class="cta-button">Contact Us</a>
+                    <a id="contactUsEnterprise" class="cta-button">Contact Us</a>
 
+                    <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+                        var contactLinkEnterprise = document.getElementById('contactUsEnterprise');
+                    
+                        if (isMobile) {
+                            contactLinkEnterprise.href = 'mailto:c2c.y3rawat@gmail.com?subject=Related%20to%20Enterprise%20Plan&body=Hi,%0D%0A%0D%0AI%20am%20interested%20in%20the%20Enterprise%20Plan.%20Please%20connect%20with%20me.%20Here%20are%20my%20details:%0D%0A%0D%0AName:%20[Your%20Name]%0D%0AMobile%20Number:%20[Your%20Mobile%20Number]%0D%0AEmail:%20[Your%20Email]%0D%0AAvailable%20Timings:%20[Your%20Available%20Timings]%0D%0A%0D%0AThank%20you.';
+                        } else {
+                            contactLinkEnterprise.href = 'https://mail.google.com/mail/?view=cm&fs=1&to=c2c.y3rawat@gmail.com&su=Related%20to%20Enterprise%20Plan&body=Hi,%0D%0A%0D%0AI%20am%20interested%20in%20the%20Enterprise%20Plan.%20Please%20connect%20with%20me.%20Here%20are%20my%20details:%0D%0A%0D%0AName:%20[Your%20Name]%0D%0AMobile%20Number:%20[Your%20Mobile%20Number]%0D%0AEmail:%20[Your%20Email]%0D%0AAvailable%20Timings:%20[Your%20Available%20Timings]%0D%0A%0D%0AThank%20you.';
+                        }
+                    });
+                    </script>
+                    
                     
                 </div>
             </div>
@@ -556,8 +569,21 @@
                 </ul>
                 <!-- <a href="mailto:c2c.y3rawat@gmail.com?subject=Interested%20in%20Professional%20Plan&body=Hi,%0D%0A%0D%0AI%20am%20interested%20in%20the%20Professional%20Plan.%20Please%20connect%20with%20me.%20Here%20are%20my%20details:%0D%0A%0D%0AName:%20[Your%20Name]%0D%0AMobile%20Number:%20[Your%20Mobile%20Number]%0D%0AEmail:%20[Your%20Email]%0D%0AAvailable%20Timings:%20[Your%20Available%20Timings]%0D%0A%0D%0AThank%20you." class="cta-button">Contact Us</a> -->
 
-                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=c2c.y3rawat@gmail.com&su=Related%20to%20Interested%20in%20Working%20with%20You&body=Hi,%0D%0A%0D%0AI%20am%20interested%20to%20work%20with%20you.%20Please%20connect%20with%20me.%20Here%20are%20my%20details:%0D%0A%0D%0AName:%20[Your%20Name]%0D%0AMobile%20Number:%20[Your%20Mobile%20Number]%0D%0AEmail:%20[Your%20Email]%0D%0AAvailable%20Timings:%20[Your%20Available%20Timings]%0D%0A%0D%0AThank%20you." target="_blank" class="cta-button">Contact Us</a>
+                <a id="contactUsWork" class="cta-button">Contact Us</a>
 
+                <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+                    var contactLinkWork = document.getElementById('contactUsWork');
+                
+                    if (isMobile) {
+                        contactLinkWork.href = 'mailto:c2c.y3rawat@gmail.com?subject=Related%20to%20Interested%20in%20Working%20with%20You&body=Hi,%0D%0A%0D%0AI%20am%20interested%20to%20work%20with%20you.%20Please%20connect%20with%20me.%20Here%20are%20my%20details:%0D%0A%0D%0AName:%20[Your%20Name]%0D%0AMobile%20Number:%20[Your%20Mobile%20Number]%0D%0AEmail:%20[Your%20Email]%0D%0AAvailable%20Timings:%20[Your%20Available%20Timings]%0D%0A%0D%0AThank%20you.';
+                    } else {
+                        contactLinkWork.href = 'https://mail.google.com/mail/?view=cm&fs=1&to=c2c.y3rawat@gmail.com&su=Related%20to%20Interested%20in%20Working%20with%20You&body=Hi,%0D%0A%0D%0AI%20am%20interested%20to%20work%20with%20you.%20Please%20connect%20with%20me.%20Here%20are%20my%20details:%0D%0A%0D%0AName:%20[Your%20Name]%0D%0AMobile%20Number:%20[Your%20Mobile%20Number]%0D%0AEmail:%20[Your%20Email]%0D%0AAvailable%20Timings:%20[Your%20Available%20Timings]%0D%0A%0D%0AThank%20you.';
+                    }
+                });
+                </script>
+                
             </div>
             <div class="work-with-us-image">
                 <img src="work_withus.svg" alt="Team Collaboration" width="400" height="300" loading="lazy">
