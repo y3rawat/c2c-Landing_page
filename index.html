@@ -530,7 +530,16 @@
                         .login-page-button:not(:last-child) {
                           margin-bottom: 64px;
                         }
-                        
+                        .login-page-login-page-button-container {
+                            margin-left: -20%;
+                            margin-top: -5%;
+                        }
+                        @media (max-width: 600px) { /* Adjust the max-width value according to your mobile view breakpoint */
+                            .login-page-login-page-button-container {
+                            margin-left: 0; /* or any other value suitable for mobile view */
+                            margin-top: 0; /* or any other value suitable for mobile view */
+                            }
+                        }
                         </style>
                         <div class="login-page-login-page-button-container" style="margin-left: -20%; margin-top: -5%;">
                             <a href="https://c2c-login.vercel.app" class="login-page-button type--C">
