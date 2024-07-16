@@ -152,6 +152,17 @@
                 <div class="mobile-menu-toggle aed" id="mobileMenuToggle">
                     <i class="fas fa-bars"></i>
                 </div>
+                <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    mobileMenuToggle.addEventListener('click', function() {
+        navLinks.classList.toggle('active');
+    });
+});
+
+                </script>
         <style>
                             #loader {
             display: none;

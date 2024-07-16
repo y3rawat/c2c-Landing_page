@@ -504,51 +504,7 @@ body.dark-mode .testimonial {
 /* Continuing from the previous CSS... */
 
 /* Media Queries */
-@media (max-width: 768px) {
-.hero-content, .steps {
-flex-direction: column;
-align-items: center;
-}
-.hero-text, .hero-image {
-text-align: center;
-margin-bottom: 2.5rem;
-}
-.step {
-margin-bottom: 2.5rem;
-}
-.nav-links {
-display: none;
-}
 
-
-
-.mobile-menu-toggle {
-display: block;
-}
-.nav-links.active {
-display: flex;
-flex-direction: column;
-position: absolute;
-top: 100%;
-left: 0;
-right: 0;
-background-color: var(--primary-color);
-padding: 1rem;
-}
-.nav-links.active a {
-color: white;
-margin: 0.5rem 0;
-}
-h1 {
-font-size: 2.5rem;
-}
-.hero p {
-font-size: 1rem;
-}
-.section-title {
-font-size: 2rem;
-}
-}
 
 @media (max-width: 480px) {
 .container {
@@ -776,14 +732,46 @@ background-color: var(--secondary-color);
     color: #3498db;
     margin-right: 10px;
 }
-
+/* Media Queries */
 @media (max-width: 768px) {
-    .work-with-us-content {
+    .hero-content, .steps {
         flex-direction: column;
+        align-items: center;
     }
-    
-    .work-with-us-image {
-        order: -1;
+    .hero-text, .hero-image {
+        text-align: center;
+        margin-bottom: 2.5rem;
+    }
+    .step {
+        margin-bottom: 2.5rem;
+    }
+    .nav-links {
+        display: none;
+    }
+    .mobile-menu-toggle {
+        display: block;
+    }
+    .nav-links.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 60px; /* Adjusted for header height */
+        left: 0;
+        right: 0;
+        background-color: var(--primary-color);
+        padding: 1rem;
+    }
+    .nav-links.active a {
+        color: white;
+        margin: 0.5rem 0;
+    }
+    h1 {
+        font-size: 2.5rem;
+    }
+    .hero p {
+        font-size: 1rem;
+    }
+    .section-title {
+        font-size: 2rem;
     }
 }
-
