@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uber-style Sign Up</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideIn {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .popup-overlay {
+            backdrop-filter: blur(8px);
+            animation: fadeIn 0.3s ease-out;
+        }
+        .popup-content {
+            animation: slideIn 0.3s ease-out;
+        }
+        .input-animated {
+            transition: all 0.3s ease;
+        }
+        .input-animated:focus {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgb(0, 122, 255);
+        }
+        .social-btn {
+            transition: all 0.3s ease;
+        }
+        .social-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgb(0, 122, 255);
+        }
+        .feedback-message {
+            transition: all 0.3s ease;
+            max-height: 0;
+            overflow: hidden;
+        }
+        .feedback-message.show {
+            max-height: 60px;
+            margin-top: 1rem;
+        }
+        .label-animated {
+            transform-origin: 0 0;
+            transition: all 0.3s ease;
+        }
+        .input-animated:focus ~ .label-animated,
+        .input-animated:not(:placeholder-shown) ~ .label-animated {
+            transform: translateY(-1.5rem) scale(0.75);
+            background-color: white;
+            padding: 0 0.25rem;
+        }
+        .loader {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            z-index: 1000;
+            border-radius: 1rem;
+        }
+        .loader-content {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .loading {
+            width: 80%;
+            height: 10px;
+            background: lightgrey;
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+        .loading::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 100%;
+            background: #007aff;
+            border-radius: 10px;
+            animation: loading 1.5s infinite;
+        }
+        .loader label {
+            color: #007aff;
+            font-size: 18px;
+            margin-bottom: 1rem;
+            animation: bit 0.6s alternate infinite;
+        }
+        @keyframes bit {
+            from { opacity: 0.3; }
+            to { opacity: 1; }
+        }
+        @keyframes loading {
+            0% { left: -50%; }
+            100% { left: 100%; }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-100 to-blue-200 min-h-screen flex items-center justify-center">
+    <div class="popup-overlay fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+        <div class="popup-content bg-white rounded-2xl shadow-2xl w-full max-w-md mx-4 p-8 relative">
+            <div class="text-center mb-8">
+                <div class="flex justify-center">
+                    <img src="c2c.svg" style="width: 200px; margin: auto;" alt="C2C">
+                </div>
+                <h1 class="text-3xl font-bold text-gray-800"></h1>
+                <p class="text-gray-600 mt-2">Start your journey with us today</p>
+            </div>
+            <form id="signupForm" class="space-y-6">
+                <div class="relative pt-5">
+                    <input type="email" id="email" name="email" required class="input-animated peer w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 transition duration-300 ease-in-out" placeholder=" ">
+                    <label for="email" class="label-animated absolute left-4 top-8 text-gray-600 bg-white px-1 transition duration-300 ease-in-out peer-focus:text-blue-500 peer-focus:top-1 peer-focus:left-3 peer-focus:text-sm peer-valid:text-blue-500 peer-valid:top-1 peer-valid:left-3 peer-valid:text-sm">Email address</label>
+                </div>
+                <input type="hidden" id="ipAddress" name="ipAddress">
+                <input type="hidden" id="referrer" name="referrer">
+                <input type="hidden" id="userAgent" name="userAgent">
+                <input type="hidden" id="screenSize" name="screenSize">
+                <input type="hidden" id="timezone" name="timezone">
+                <input type="hidden" id="language" name="language">
+                <button type="submit" class="w-full bg-blue-500 text-white py-4 rounded-lg hover:bg-blue-600 transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 text-lg font-semibold shadow-lg">Continue</button>
+                <div id="feedbackMessage" class="feedback-message text-center text-sm font-medium"></div>
+            </form>
+            <div id="loader" class="loader">
+                <div class="loader-content">
+                    <label>Redirecting...</label>
+                    <div class="loading"></div>
+                </div>
+            </div>
+            <p class="text-xs text-gray-500 mt-8 text-center">
+                By continuing, you agree to Uber's <a href="#" class="underline hover:text-blue-500">Terms of Service</a> and acknowledge you've read our <a href="#" class="underline hover:text-blue-500">Privacy Policy</a>.
+            </p>
+        </div>
+    </div>
+    <script>
+        // Fetch IP address
+        fetch('https://api.ipify.org?format=json')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('ipAddress').value = data.ip;
+            })
+            .catch(error => console.error('Error fetching IP:', error));
+
+        // Capture referrer
+        document.getElementById('referrer').value = document.referrer;
+
+        // Capture user agent
+        document.getElementById('userAgent').value = navigator.userAgent;
+
+        // Capture screen size
+        document.getElementById('screenSize').value = `${window.screen.width}x${window.screen.height}`;
+
+        // Capture timezone
+        document.getElementById('timezone').value = Intl.DateTimeFormat().resolvedOptions().timeZone;
+
+        // Capture language
+        document.getElementById('language').value = navigator.language || navigator.userLanguage;
+
+        document.getElementById("signupForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+            var feedbackMessage = document.getElementById("feedbackMessage");
+            var loader = document.getElementById("loader");
+            
+            feedbackMessage.textContent = "";
+            feedbackMessage.classList.remove("show");
+            loader.style.display = "flex";
+
+            var formData = new FormData(this);
+            var keyValuePairs = [];
+            for (var pair of formData.entries()) {
+                keyValuePairs.push(encodeURIComponent(pair[0]) + "=" + encodeURIComponent(pair[1]));
+            }
+
+            var formDataString = keyValuePairs.join("&");
+
+            fetch("https://script.google.com/macros/s/AKfycbxSEjHEmbhLvl-OL5d6dIEbmm-NSVdZlnOCdKK6Io7yJhDaP0B4wxt_Ien9y9JbIDhD/exec", {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: formDataString
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text();
+            })
+            .then(data => {
+                feedbackMessage.textContent = "Sign up successful!";
+                feedbackMessage.style.color = "green";
+                feedbackMessage.classList.add("show");
+                document.getElementById("signupForm").reset();
+                
+                setTimeout(() => {
+                    window.location.href = "https://c2c-resume.vercel.app";
+                }, 200);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                feedbackMessage.textContent = "An error occurred. Please try again.";
+                feedbackMessage.style.color = "red";
+                feedbackMessage.classList.add("show");
+                loader.style.display = "none";
+            });
+        });
+    </script>
+</body>
+</html>
