@@ -184,6 +184,110 @@
             overflow: visible;
         }
 
+        .maintenance-button {
+            display: inline-flex;
+            align-items: center;
+            background-color: #ff6b6b;
+            color: white;
+            border-radius: 6px;
+            padding: 8px 16px;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 5px;
+            text-decoration: none;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .maintenance-button:hover {
+            background-color: #ff5252;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .maintenance-button i {
+            margin-right: 6px;
+        }
+
+        .maintenance-banner {
+            background-color: #f8f9fa;
+            color: white;
+            text-align: center;
+            padding: 12px 20px;
+            width: 100%;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .maintenance-notice-button {
+            display: inline-block;
+            background-color: #ff3333;
+            color: white;
+            border-radius: 8px;
+            padding: 10px 24px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border: 2px solid white;
+            transition: all 0.3s ease;
+            margin-top: 55px;
+            margin-bottom: 5px;
+        }
+
+        .maintenance-notice-button:hover {
+            background-color: #e60000;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .maintenance-notice-button i {
+            margin-right: 8px;
+            font-size: 18px;
+        }
+
+        .maintenance-banner .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .maintenance-banner .maintenance-button {
+            background-color: transparent;
+            box-shadow: none;
+            padding: 0;
+            color: white;
+            font-size: 16px;
+            display: block;
+            width: 100%;
+        }
+
+        .maintenance-banner .maintenance-button:hover {
+            text-decoration: underline;
+            transform: none;
+            background-color: transparent;
+            box-shadow: none;
+        }
+
+        @media (max-width: 768px) {
+            .maintenance-button {
+                font-size: 12px;
+                padding: 6px 12px;
+            }
+            
+            .maintenance-banner .maintenance-button {
+                font-size: 14px;
+            }
+            
+            .maintenance-notice-button {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+            
+            .maintenance-notice-button i {
+                font-size: 16px;
+            }
+        }
+
         .ci1 {
             fill: #4cc9f0;
             animation: toBig 3s infinite -1.5s;
@@ -250,17 +354,7 @@
                 <a href="#pricing">Pricing</a>
                 <a href="#why-join">Why Join Us</a>
                 <div style="margin-right: 70px;"></div>
-                <!-- <a href="login.html" class="cssbuttons-io-button" style="color:white;">
-                    Get Started
-                    <div class="icon"> -->
-
-                        
-                        <!-- <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M0 0h24v24H0z" fill="none"></path>
-                            <path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z" fill="currentColor"></path>
-                        </svg>
-                    </div>
-                </a> -->
+                
                 <div style="margin-right: 30px;"></div>
                 <a href="login.html" class="cssbuttons-io-button" style="color:white;">
                     Try Free Analysis
@@ -277,6 +371,16 @@
             </div>
         </div>
     </header>
+    
+    <!-- Maintenance Notice Banner -->
+    <div class="maintenance-banner">
+        <div class="container">
+            <a href="maintenance.html" class="maintenance-notice-button">
+                <i class="fas fa-exclamation-circle"></i> This page is currently under maintenance and could be shut down after Jan 21, 2025 ➡️
+            </a>
+        </div>
+    </div>
+    
     <main>
         <section class="hero fade-in">
             <div class="container">
@@ -791,7 +895,7 @@
 
     <script src="script.js"></script>
     <script>// Function to show the loader
-        function showLoader() {
+        function showLoader() { 
             document.getElementById('loader').style.display = 'flex';
             document.body.style.overflow = 'hidden'; // Prevent scrolling when loader is visible
         }
